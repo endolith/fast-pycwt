@@ -92,8 +92,7 @@ def wavel_W(signal, wavel, scales):
     '''
     wvl = wavel_by_name[wavel]
     if wvl is morlet: return mwt(signal, scales)
-    if wvl is ricker: return rwt(signal, scales)
-    return cwt(signal, wvl, scales)
+    return rwt(signal, scales) if wvl is ricker else cwt(signal, wvl, scales)
 
 
 # ======================================================================
